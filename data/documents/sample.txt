@@ -1,0 +1,13 @@
+AI Knowledge Assistant
+
+This is a sample document for our AI Knowledge Assistant project.
+
+The application will allow users to upload documents
+and ask questions about their contents.
+
+The system will use document ingestion, text chunking,
+embeddings, vector search, and retrieval augmented generation.
+
+The goal is to provide accurate answers based on the uploaded
+knowledge base while providing the source documents used
+to generate each answer.
