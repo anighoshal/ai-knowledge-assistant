@@ -42,3 +42,19 @@ def test_overlap_must_be_smaller_than_chunk_size():
             chunk_size=100,
             overlap=100,
         )
+
+def test_chunk_contains_document_metadata():
+    text = "A" * 1500
+
+    chunks = chunk_text(
+        text,
+        chunk_size=1000,
+        overlap=200,
+        document_id="doc-001",
+        filename="employee_policy.pdf",
+    )
+
+    assert len(chunks) == 2
+    assert chunks[0].document_id == "doc-001"
+    assert chunks[0].filename == "employee_policy.pdf"
+    assert chunks[0].chunk_index == 0

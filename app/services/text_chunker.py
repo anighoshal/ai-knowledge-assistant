@@ -5,12 +5,16 @@ from dataclasses import dataclass
 class TextChunk:
     text: str
     chunk_index: int
+    document_id: str
+    filename: str
 
 
 def chunk_text(
     text: str,
     chunk_size: int = 1000,
     overlap: int = 200,
+    document_id: str = "unknown",
+    filename: str = "unknown",
 ) -> list[TextChunk]:
     """
     Split text into overlapping chunks.
@@ -52,6 +56,8 @@ def chunk_text(
                 TextChunk(
                     text=chunk,
                     chunk_index=chunk_index,
+                    document_id = document_id,
+                    filename = filename,
                 )
             )
 
